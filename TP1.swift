@@ -87,12 +87,14 @@ if let best = bestMovie(in: movieList) {
     displayMovie(best)
 }
 
-func moviesByDecade(_ movies: [(title: String, year: Int, rating: Double, genre: String)]) -> [String: [(title: String, year: Int, rating: Double, genre: String)]] {
+func moviesByDecade(_ movies: [(title: String, year: Int, rating: Double, genre: String)])
+    -> [String: [(title: String, year: Int, rating: Double, genre: String)]]
+{
     let decades = Set<Int>(movies.map { $0.year / 10 * 10 })
     var dic: [String: [(title: String, year: Int, rating: Double, genre: String)]] = [:]
 
     for decade in decades {
-        dic[String(decade)] = movies.filter({ $0.year / 10 * 10 == decade})
+        dic[String(decade)] = movies.filter({ $0.year / 10 * 10 == decade })
     }
 
     return dic
@@ -102,13 +104,11 @@ print("\n3.3 - By decades")
 let moviesByDecadesDic = moviesByDecade(movieList)
 print(moviesByDecadesDic)
 
-func saveCSV(_ movies: [(title: String, year: Int, rating: Double, genre: String)], to filename: String) {
+func exportToCSV(_ movies: [(title: String, year: Int, rating: Double, genre: String)]) -> String {
     var csv = "Title,Year,Rating,Genre"
     for movie in movies {
         csv += "\n\(movie.title),\(movie.year),\(movie.rating),\(movie.genre)"
     }
-    
-    print(csv)
+
+    return csv
 }
-
-
