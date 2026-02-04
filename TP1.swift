@@ -107,8 +107,8 @@ func saveCSV(_ movies: [(title: String, year: Int, rating: Double, genre: String
     for movie in movies {
         csv += "\n\(movie.title),\(movie.year),\(movie.rating),\(movie.genre)"
     }
-
-    csv.write(to: &TextOutputStream)
+    
+    print(csv)
 }
 
 
