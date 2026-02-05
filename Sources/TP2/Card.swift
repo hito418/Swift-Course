@@ -79,7 +79,7 @@ struct Card: Comparable, Equatable {
 
 extension Array where Element == Card {
   func highest() -> Card? {
-    return self.max { $0.rank > $1.rank }
+    return self.max { $1.rank > $0.rank }
   }
 
   func description() -> String {
