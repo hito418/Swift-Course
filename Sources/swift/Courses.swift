@@ -1,6 +1,5 @@
-
 @main
-struct TPExecutor {
+struct CoursesTP {
     @MainActor
     static func main() {
         var movieList: [(title: String, year: Int, rating: Double, genre: String)] = [
