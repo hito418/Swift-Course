@@ -117,5 +117,9 @@ struct MovieManagerEx {
         print("\n3.3 - By decades")
         let moviesByDecadesDic = moviesByDecade(movieList)
         print(moviesByDecadesDic)
+
+        print("\n5.1 - Export to CSV")
+        let csv = exportToCSV(movieList)
+        print(csv)
     }
 }
