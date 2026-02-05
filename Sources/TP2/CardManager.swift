@@ -27,6 +27,11 @@ final class CardGameManager {
         game.dealCards()
         game.play()
 
+        print("=== EXTENSION TEST ===")
+        let testCardList: [Card] = [Card(suit: .hearts, rank: .five), Card(suit: .spades, rank: .king), Card(suit: .diamonds, rank: .three)]
+        print("Test Cards: \(testCardList.description())")
+        print("Highest card: \(testCardList.highest())")
+
         // TODO: Créer deux joueurs
         // let player1 = HumanPlayer(name: "Alice")
         // let player2 = AIPlayer(name: "Bob")
