@@ -9,6 +9,7 @@ final class WeatherAPIManager {
 
     func run() async {
         print("=== Weather Data Aggregator ===\n")
+        let start = Date()
 
         // TODO 5.1: Créer array de 10 villes (1 pt)
         // Exemples: Paris (48.8566, 2.3522), London (51.5074, -0.1278), etc.
@@ -85,5 +86,10 @@ final class WeatherAPIManager {
         print("Cache hits: \(hits2)")
         print("Cache misses: \(misses2)")
         print("Hit rate: \(((Double(hits2))/(Double(total2))) * 100)%")
+
+        let finish = Date()
+        print(
+            "\nExecution time: \(String(format: "%.2f", DateInterval(start: start, end: finish).duration))s"
+        )
     }
 }
